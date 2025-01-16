@@ -45,7 +45,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
                                 </svg>
                             </button>
-                            <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                            <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
                                  class="absolute top-[82px] right-[32px] flex w-1/8 min-w-[12rem] text-end flex-col overflow-hidden rounded-x-md rounded-b-md bg-warm-brown" role="menu">
                                 @if(Auth::check() && Auth::user()->user_type == 'admin')
                                 <a href="/admin" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>

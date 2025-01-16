@@ -21,6 +21,7 @@ export default {
                 'warm-brown': '#AB886D',
                 'dark-brown': '#493628',
                 'light-brown': '#D6C0B3',
+                'biege': '#A58B77',
             },
         },
     },
