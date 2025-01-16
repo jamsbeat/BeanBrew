@@ -20,7 +20,7 @@
         </script>
         @endif
         <nav class="bg-dark-brown sticky top-0 z-40 shadow-md border-b-2 border-warm-brown">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="-mx-auto max-w-full px-2 sm:px-6 lg:px-8">
                 <div class="flex h-20 items-center justify-between">
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div class="flex-shrink-0">
@@ -36,21 +36,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+                         x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
                         @auth
-                            <span class="block text-white px-3 py-2 text-base font-medium">{{ Auth::user()->name }}</span>
-
-                            <!-- Logout Form -->
-                            <form method="POST" action="/logout">
-                                @csrf
-                                <button type="submit" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Logout
-                                </button>
-                            </form>
+                            <button class="flex items-center text-white hover:bg-warm-brown hover:text-gray-200 rounded-md px-3 py-2 my-2 text-sm font-medium"
+                                    type="button" @click="isOpen = ! isOpen">{{ Auth::user()->name }}
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-4 shrink-0 transition px-0.5" aria-hidden="true" :class="isOpen  ?  'rotate-180'  :  ''">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                                </svg>
+                            </button>
+                            <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
+                                 class="absolute top-[82px] right-[28px] flex w-1/8 min-w-[12rem] text-end flex-col overflow-hidden border-x-2 border-b-2 rounded-md bg-warm-brown" role="menu">
+                                <a href="#" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
+                                <a href="#" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Subscription</a>
+                                <a href="/settings" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Settings</a>
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <button type="submit" class="bg-warm-brown px-4 py-2 text-sm text-end text-white w-full hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white">Logout</button>
+                                </form>
+                            </div>
                         @else
                         <div class="">
                             <a href="/login" class="{{ request()->is('login')? 'bg-warm-brown text-white': ' text-white hover:bg-warm-brown hover:text-gray-200'}} rounded-md px-3 py-2 my-2 text-sm font-medium">Login</a>
                             <a href="/register" class="{{ request()->is('register')? 'bg-warm-brown text-white': ' text-white hover:bg-warm-brown hover:text-gray-200'}} rounded-md px-3 py-2 my-2 text-sm font-medium">Register</a>
-                    </div>
+                        </div>
                     @endauth
                 </div>
             </div>

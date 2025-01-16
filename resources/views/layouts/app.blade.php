@@ -36,7 +36,7 @@
             @endif
 
             <!-- Page Content -->
-            <div class="h-screen">
+            <div class="h-auto  ">
                 <main class=" mx-auto max-w-7xl py-4 sm:px-6 lg:px-8">
                     {{ $slot }}
                 </main>
