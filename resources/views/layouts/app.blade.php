@@ -24,7 +24,9 @@
     <body class="font-sans antialiased bg-light-gray">
 
         <div class="min-h-screen bg-light-gray">
-            @livewire('navigation-menu')
+            <div>
+                @livewire('navigation-menu')
+            </div>
 
             <!-- Page Heading -->
             @if (isset($header))

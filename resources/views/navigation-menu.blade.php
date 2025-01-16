@@ -1,12 +1,12 @@
 <div>
     @if (request()->is('/'))
-            <div class="grid h-screen object-center overflow-hidden content-center bg-black">
+            <div class="grid object-center overflow-hidden h-fit content-center bg-black items-center">
                 <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-screen blur-sm">
+                <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[6px] pl-12 border-white">
+                    Bean <br> & <br> Brew
+                </h3>
             </div>
-            <div class="absolute inset-0">
-            <h3 id="bean-brew" class="pr-8 absolute text-white text-8xl z-50 bottom-[250px] left-[90px] border-r-[6px] border-white">
-                Bean <br> & <br> Brew
-            </h3>
+            <div class="">
         </div>
         <style>
             #bean-brew { position: absolute; opacity: 1; transition: opacity 1.5s ease; }
@@ -39,15 +39,17 @@
                     <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
                          x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
                         @auth
-                            <button class="flex items-center text-white hover:bg-warm-brown hover:text-gray-200 rounded-md px-3 py-2 my-2 text-sm font-medium"
+                            <button class="flex items-center text-white hover:bg-warm-brown hover:text-gray-200 rounded-md px-3 py-2 my-2 text-sm font-medium" :class="isOpen  ?  'bg-warm-brown '  :  ''"
                                     type="button" @click="isOpen = ! isOpen">{{ Auth::user()->name }}
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-4 shrink-0 transition px-0.5" aria-hidden="true" :class="isOpen  ?  'rotate-180'  :  ''">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-4 shrink-0 transition px-0.5" aria-hidden="true" :class="isOpen  ?  'rotate-180 '  :  ''">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
                                 </svg>
                             </button>
                             <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()"
-                                 class="absolute top-[82px] right-[28px] flex w-1/8 min-w-[12rem] text-end flex-col overflow-hidden border-x-2 border-b-2 rounded-md bg-warm-brown" role="menu">
-                                <a href="#" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
+                                 class="absolute top-[82px] right-[32px] flex w-1/8 min-w-[12rem] text-end flex-col overflow-hidden rounded-x-md rounded-b-md bg-warm-brown" role="menu">
+                                @if(Auth::check() && Auth::user()->user_type == 'admin')
+                                <a href="/admin" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
+                                @endif
                                 <a href="#" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Subscription</a>
                                 <a href="/settings" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Settings</a>
                                 <form method="POST" action="/logout">

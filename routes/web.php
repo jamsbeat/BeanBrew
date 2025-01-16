@@ -22,14 +22,5 @@ Route::middleware('guest')->group(function () {
     Route::view('/register', 'auth.register')->name('register');
 });
 
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin.dashboard');
 
-
-//Route::middleware([
-//    'auth:sanctum',
-//    config('jetstream.auth_session'),
-//    'verified',
-//])->group(function () {
-//    Route::get('/dashboard', function () {
-//        return view('dashboard');
-//    })->name('dashboard');
-//});
