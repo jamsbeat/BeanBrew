@@ -1,8 +1,8 @@
 <div>
     @if (request()->is('/'))
-            <div class="grid object-center overflow-hidden h-fit content-center bg-black items-center">
-                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-screen blur-sm">
-                <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[6px] pl-12 border-white">
+            <div class="grid object-center overflow-hidden h-screen content-center bg-black items-center">
+                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto blur-sm">
+                <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[28px] font-poppins font-bold pl-12 border-white">
                     Bean <br> & <br> Brew
                 </h3>
             </div>
@@ -24,7 +24,7 @@
                 <div class="flex h-20 items-center justify-between">
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div class="flex-shrink-0">
-                            <a href="/"><img class="h-14 w-auto" src="https://beanandbrew.com.au/wp-content/uploads/2021/01/Bean-Brew-LogoA-1.png" alt="F1"></a>
+                            <a href="/"><img class="h-14 w-auto pb-2" src="{{ asset('images/coffeelogo.png') }}"  alt="F1"></a>
                         </div>
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4">
@@ -51,7 +51,7 @@
                                 <a href="/admin" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
                                 @endif
                                 <a href="#" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Subscription</a>
-                                <a href="/settings" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Settings</a>
+                                <a href="/profile" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Profile</a>
                                 <form method="POST" action="/logout">
                                     @csrf
                                     <button type="submit" class="bg-warm-brown px-4 py-2 text-sm text-end text-white w-full hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white">Logout</button>

@@ -18,10 +18,10 @@ Route::middleware('guest')->group(function () {
     Route::view('/register', 'auth.register')->name('register');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/settings', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/profile', function () {
     return view('profile.show');
 })->name('profile.show');
 
 //Admin
-Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('admin.dashboard');
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
