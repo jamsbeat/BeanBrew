@@ -115,7 +115,7 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
             <h1
                 class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl  text-warm-brown mb-5 md:text-5xl md:leading-normal">
-                Control your Finances with our <span class="text-dark-brown">Smart Tool </span>
+                Drink the Best Taste the Best <span class="text-dark-brown">Bean & Brew </span>
             </h1>
             <p class="max-w-sm mx-auto text-center text-base leading-7 p-4 rounded-md text-warm-brown mb-9">Invest
                 intelligently

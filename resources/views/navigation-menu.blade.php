@@ -50,7 +50,6 @@
                                 @if(Auth::check() && Auth::user()->user_type == 'admin')
                                 <a href="/admin" class=" px-4 py-2 text-sm text-white bg-warm-brown hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
                                 @endif
-=======
                                     <div x-data="{ activeTab: 'orders' }" class="flex  items-center ml-auto bg-warm-brown hover:bg-neutral-900/5">
                                         <a :href="activeTab === 'orders' ? '/orders' : '/orders'"
                                            class="bg-warm-brown px-0.5 py-2 text-sm w-fit text-end text-white">
@@ -62,7 +61,6 @@
                                             </svg>
                                         </button>
                                     </div>
->>>>>>> 7a3bb133b67963163de243c1db49fe80ebbe810c
                                 <a href="/profile" class="bg-warm-brown px-4 py-2 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Profile</a>
                                 <form method="POST" action="/logout">
                                     @csrf
@@ -92,4 +90,3 @@
         </div>
     </nav>
 </div>
-

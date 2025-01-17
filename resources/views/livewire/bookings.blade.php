@@ -52,12 +52,28 @@
       Book
     </button>
     @endauth
+    <div class="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 flex justify-center items-center" onclick="alert('Please Login or Register in order to book'); document.getElementById('dropdown-button').querySelector('span').textContent = 'Select a Location'; document.getElementById('selected-date').value = ''; document.getElementById('selected-time').value = ''; document.getElementById('location-dropdown').classList.add('hidden'); document.getElementById('date-picker').classList.add('hidden'); document.getElementById('time-picker').classList.add('hidden'); document.getElementById('booking-info').classList.add('hidden'); document.getElementById('book-button-container').classList.add('hidden');">
     @guest
-    <p>Please Login or register to book</p>
+        <a href="/register" class="text-center w-full">Book</a>
     @endguest
-  </div>
+    </div>
 </div>
 
 <script>
   document.getElementById('selected-date').setAttribute('min', new Date().toISOString().split('T')[0]);
+
+  window.addEventListener('cartUpdated', event => {
+  const Toast = Swal.mixin({
+      toast: true,
+      position: "top-start",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+      }
+  });
 </script>
+
+
