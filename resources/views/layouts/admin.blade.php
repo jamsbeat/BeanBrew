@@ -25,18 +25,26 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-light-gray">
+<body class="font-sans antialiased bg-white">
 
-<div class="min-h-screen bg-light-gray">
+<div class="min-h-screen bg-white">
     <div>
         @livewire('admin-navigation')
     </div>
 
     <!-- Page Heading -->
     @if (isset($header))
-        <header class="bg-white dark:bg-gray-800 shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <header class="bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto p-4 sm:px-6 lg:px-8">
                 {{ $header }}
+            </div>
+        </header>
+    @endif
+
+    @if (isset($header2))
+        <header class="bg-white dark:bg-gray-800 shadow-xl mb-4">
+            <div class="max-w-7xl mx-auto pt-2 pb-4 px-4 sm:px-6 lg:px-8">
+                {{ $header2 }}
             </div>
         </header>
     @endif
