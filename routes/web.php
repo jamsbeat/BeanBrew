@@ -9,7 +9,7 @@ Route::get('/', \App\Livewire\HomePage::class)->name('home');
 Route::get('/menu', \App\Livewire\StoreFront::class)->name('menu');
 Route::get('/product/{productId}', \App\Livewire\Product::class)->name('product');
 Route::get('/cart', \App\Livewire\Cart::class)->name('cart');
-Route::get('/bookings', \App\Livewire\Booking::class)->name('bookings');
+Route::get('/bookings', \App\Livewire\Bookings::class)->name('bookings');
 Route::get('/about', \App\Livewire\AboutPage::class)->name('about');
 
 //Auth
