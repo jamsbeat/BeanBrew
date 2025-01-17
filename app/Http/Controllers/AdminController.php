@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Booking;
 
 class AdminController extends Controller
 {
@@ -12,6 +13,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
+    protected $booking;
+
     public function index(Request $request)
     {
         if (Auth::id()) {
@@ -27,5 +30,16 @@ class AdminController extends Controller
         }
 
         return redirect()->route('login');
+    }
+
+    public function __construct(Booking $booking)
+    {
+        $this->booking = $booking;
+    }
+
+    public function dashboard()
+    {
+        $bookings = $this->booking->all(); // Fetch bookings from the database
+        return view('admin.dashboard')->with('bookings', $bookings);
     }
 }
