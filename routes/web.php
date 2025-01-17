@@ -23,5 +23,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/profile', function () {
 })->name('profile.show');
 
 //Admin
-Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
+Route::middleware(['auth'])->group(function () {
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/admin', 'index')->name('dashboard');
+        Route::get('/admin/filler', 'index')->name('filler');
+    });
+});

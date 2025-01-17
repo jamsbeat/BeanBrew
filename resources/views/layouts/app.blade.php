@@ -25,7 +25,7 @@
         @livewireStyles
     </head>
 
-    <body class="font-sans antialiased bg-light-gray\">
+    <body class="font-sans antialiased bg-light-gray">
 
         <div class="min-h-screen bg-light-gray">
             <div>

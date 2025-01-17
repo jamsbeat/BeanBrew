@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="{{ asset('images/coffeelogo.png') }}" alt="Logo" class="w-24 h-24 p-2 bg-dark-brown sm:rounded-lg shadow-sm" />
         </x-slot>
 
         <x-validation-errors class="mb-4" />

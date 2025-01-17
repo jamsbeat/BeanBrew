@@ -16,7 +16,7 @@
                         <!-- Arrow Button -->
                         <button
                             @click="showLogo = !showLogo"
-                            class="flex items-center justify-center focus:outline-none pt-2 text-white">
+                            class="flex items-center justify-center focus:outline-none pt-0.5 text-gray-800 dark:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" :class="showLogo  ?  'rotate-90 '  :  ''">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                             </svg>
@@ -43,6 +43,9 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('filler') }}" :active="request()->routeIs('filler')">
+                        {{ __('Filler') }}
                     </x-nav-link>
                 </div>
             </div>

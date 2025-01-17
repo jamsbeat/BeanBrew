@@ -12,17 +12,20 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function index()
+    public function index(Request $request)
     {
         if (Auth::id()) {
             $usertype = Auth::user()->user_type;
             if ($usertype == 'user') {
                 return redirect('/');
-            } elseif($usertype == 'admin') {
-                return view('admin.dashboard');
+            } elseif ($usertype == 'admin') {
+                $view = $request->route()->getName();
+                return view('admin.' . $view);
             } else {
                 return redirect()->back();
             }
         }
+
+        return redirect()->route('login');
     }
 }
