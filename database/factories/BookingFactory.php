@@ -17,12 +17,7 @@ class BookingFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 11,
-            'location' => $this->faker->randomElement(['Harrogate', 'Sheffield', 'Leeds']),
-            'people' => $this->faker->numberBetween(1, 8),
-            'date' => $this->faker->date(),
-            'time' => $this->faker->time(),
-
+            //
         ];
     }
 }

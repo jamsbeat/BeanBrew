@@ -12,15 +12,15 @@
     </x-slot>
 
     <div class="p-8 bg-white shadow-xl rounded-xl">
-        <div class="grid grid-cols-2 text-white dark:bg-gray-800 sm:rounded-t-lg">
+        <div class="grid grid-cols-2 bg-gray-800 sm:rounded-t-lg">
             <section class="">
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8  p-4">
                         <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg p-4 px-2">
-                            <div class="p-2 text-2xl text-black dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
+                            <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
                                 Orders
                             </div>
-                            <div class="p-2 mt-2 text-black dark:text-white">
+                            <div class="p-2 mt-2 dark:text-white">
                                 list of orders
                             </div>
                         </div>
@@ -31,12 +31,21 @@
             <section class="">
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-4">
-                        <div class="bg-white text-black dark:bg-gray-800 overflow-hidden sm:rounded-lg p-4 px-2">
+                        <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg p-4 px-2">
                             <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
                                 Bookings
                             </div>
-                            <div class="">
-                                @livewire('bookings-list')
+                            <div class="p-2 mt-2 dark:text-white">
+                                <div class="grid">
+                                    @foreach($bookings as $booking)
+                                        <div class="py-4">
+                                            <div>{{ $booking->user->name }}</div>
+                                            <div>{{ $booking->location }}</div>
+                                            <div>{{ $booking->date }}</div>
+                                            <div>{{ $booking->time }}</div>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,19 +53,19 @@
             </section>
         </div>
         <section class="sm:rounded-b-lg shadow-xl">
-            <div class="py-12 round-b-lg bg-white  dark:bg-gray-800">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-4 bg-white dark:bg-gray-800">
+            <div class="py-12 round-b-lg bg-gray-800">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-4 bg-gray-800">
                     <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg p-4 px-2">
                         <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
-                            Calendar
+                            Something
                         </div>
                         <div class="p-2 mt-2 dark:text-white">
-                            <livewire:bookings-calendar
-                            />
+                            list of something
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
 </x-admin-layout>

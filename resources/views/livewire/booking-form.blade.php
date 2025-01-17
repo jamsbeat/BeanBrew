@@ -20,14 +20,14 @@
 
         <div>
             <label for="people" class="block font-medium text-gray-700">Number of People</label>
-            <input id="people" type="number" wire:model="people" min="1" max="8" placeholder="1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required />
+            <input id="people" type="number" wire:model="people" placeholder="1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required />
             @error('location') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <!-- Date Picker -->
         <div>
             <label for="booking_date" class="block font-medium text-gray-700">Date</label>
-            <input type="date" id="booking_date" wire:model="booking_date" min="2024-24-02" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm "  required>
+            <input type="date" id="booking_date" wire:model="booking_date" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
             @error('booking_date') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
