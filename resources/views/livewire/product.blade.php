@@ -99,7 +99,7 @@
                     });
                     Toast.fire({
                         icon: "success",
-                        title: "Product added to cart"
+                        title: "Product added to cart successfully!"
                     });
                 });
             </script>
