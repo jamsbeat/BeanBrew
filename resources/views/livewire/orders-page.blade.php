@@ -1,40 +1,37 @@
-<style>
-    .container {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-    }
+<div>
+    <div>
+        <div>
+            <div class="text-xl font-semibold py-1 text-dark-brown">
+                Your Orders
+            </div>
+        </div>
+        <div>
+            <div class="text-lg font-semibold py-1 text-dark-brown">
+                Your Bookings
+            </div>
+            <div>
+                @foreach($bookings as $booking)
+                    <div>
+                        <div>
+                            <div>
+                                {{ $booking->user->name }}
 
-    .orders {
-        background-color: #f9f9f9;
-        width: 45%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .bookings {
-        background-color: #f1f1f1;
-        width: 45%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .booking-item {
-        margin-bottom: 10px;
-    }
+                                {{ $booking->location }}
 
-    .booking-item hr {
-        border: none;
-        border-top:5px solid #ddd;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-</style>
-
-<div class="container">
-    <div class="orders">
-        <h3><u>Your Orders:</u></h3>
-        <div>Order 1: Details...
+                                {{ $booking->created_at }}
+                            </div>
+                        </div>
+                        <button>
+                            <div class="text-red-600"
+                            wire:click="remove({{$booking->id}})">Remove</div>
+                        </button>
+                    </div>
+                @endforeach
+                <div class="pt-2">
+                    {{ $bookings->links('pagination-links') }}
+                </div>
+            </div>
+>>>>>>> e48eb2f28b1241ccf311f67bf4e73a68aba46e77
         </div>
     </div>
 

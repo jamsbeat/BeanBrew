@@ -35,18 +35,7 @@
                             <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
                                 Bookings
                             </div>
-                            <div class="p-2 mt-2 dark:text-white">
-                                <div class="grid">
-                                    @foreach($bookings as $booking)
-                                        <div class="py-4">
-                                            <div>{{ $booking->user->name }}</div>
-                                            <div>{{ $booking->location }}</div>
-                                            <div>{{ $booking->date }}</div>
-                                            <div>{{ $booking->time }}</div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                            @livewire('bookings-list')
                         </div>
                     </div>
                 </div>
