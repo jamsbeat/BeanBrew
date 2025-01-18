@@ -5,19 +5,30 @@ namespace App\Livewire;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class OrdersPage extends Component
 {
-    public $bookings;
+    use WithPagination;
 
     public function mount()
     {
-        $userId = Auth::id();
-        $this->bookings = Booking::where('user_id', $userId)->get();
+
     }
 
     public function render()
     {
-        return view('livewire.orders-page', ['bookings' => $this->bookings])->layout('layouts.app');
+        $userId = Auth::id();
+        $bookings = Booking::where('user_id', $userId)->simplePaginate(3);
+
+        return view('livewire.orders-page', [
+            'bookings' => $bookings
+        ])->layout('layouts.app');
+    }
+
+    public function remove($id)
+    {
+        Booking::find($id)->delete();
+        $this->mount();
     }
 }
