@@ -20,4 +20,10 @@ class OrdersPage extends Component
     {
         return view('livewire.orders-page', ['bookings' => $this->bookings])->layout('layouts.app');
     }
+
+    public function remove($id)
+    {
+        Booking::find($id)->delete();
+        $this->mount();
+    }
 }
