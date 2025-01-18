@@ -52,11 +52,11 @@
                                 @endif
                                     <div x-data="{ activeTab: 'orders' }" class="flex  items-center ml-auto bg-warm-brown hover:bg-neutral-900/5">
                                         <a :href="activeTab === 'orders' ? '/orders' : '/orders'"
-                                           class="bg-warm-brown px-0.5 py-2 text-sm w-fit text-end text-white">
+                                           class="bg-warm-brown px-0.5 py-2 pl-32 text-sm text-white hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none   dark:hover:text-light-gray dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white">
                                            <span x-text="activeTab === 'orders' ? 'Orders' : 'Bookings'"></span>
                                         </a>
                                         <button @click="activeTab = activeTab === 'orders' ? 'bookings' : 'orders'" class="bg-warm-brown text-white px-0 py-0 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-3 ">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                             </svg>
                                         </button>
