@@ -39,7 +39,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $bookings = $this->booking->all(); // Fetch bookings from the database
+        $bookings = $this->booking->all();
         return view('admin.dashboard')->with('bookings', $bookings);
     }
 }

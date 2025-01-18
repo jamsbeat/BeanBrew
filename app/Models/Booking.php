@@ -10,6 +10,10 @@ class Booking extends Model
     /** @use HasFactory<\Database\Factories\BookingFactory> */
     use HasFactory;
 
+    protected $casts = [
+        'location' => 'array',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
