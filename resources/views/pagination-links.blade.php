@@ -17,7 +17,7 @@
                             @if ($page == $paginator->currentPage())
                                 <li class=" w-10 py-1 text-center text-indigo-700 cursor-pointer" wire:click="gotoPage({{$page}})">{{$page}}</li>
                             @else
-                                <li class=" w-10 py-1 text-center text-white cursor-pointer" wire:click="gotoPage({{$page}})">{{$page}}</li>
+                                <li class=" w-10 py-1 text-center text-black dark:text-white cursor-pointer" wire:click="gotoPage({{$page}})">{{$page}}</li>
                             @endif
                         @endforeach
                     @endif
