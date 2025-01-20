@@ -25,5 +25,11 @@ class OrdersPage extends Component
         ])->layout('layouts.app');
     }
 
+    public function remove($id)
+    {
+        Booking::find($id)->delete();
+        $this->mount();
+    }
+
 
 }

@@ -1,12 +1,9 @@
 <div>
     <div>
-=======
         <div class="text-xl font-bold py-1 text-dark-brown">
             Your Orders
         </div>
     </div>
->>>>>>> 26e1af7dded11126b40fe1a08e380008c5de4dab
-
 
     <div class="bookings">
         <h3 class="py-1 text-xl font-bold text-dark-brown">Your Bookings</h3>
