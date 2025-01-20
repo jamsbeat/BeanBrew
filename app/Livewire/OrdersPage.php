@@ -10,7 +10,6 @@ use Livewire\WithPagination;
 class OrdersPage extends Component
 {
     use WithPagination;
-
     public function mount()
     {
 
@@ -19,10 +18,10 @@ class OrdersPage extends Component
     public function render()
     {
         $userId = Auth::id();
-        $bookings = Booking::where('user_id', $userId)->simplePaginate(3);
+        $bookings = Booking::where('user_id', $userId)->latest()->paginate(3);
 
         return view('livewire.orders-page', [
-            'bookings' => $bookings
+            'bookings' => $bookings,
         ])->layout('layouts.app');
     }
 
@@ -31,4 +30,6 @@ class OrdersPage extends Component
         Booking::find($id)->delete();
         $this->mount();
     }
+
+
 }
