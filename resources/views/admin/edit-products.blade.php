@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-bold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Filler') }}
+            {{ __('Edit Products') }}
         </h2>
     </x-slot>
 
