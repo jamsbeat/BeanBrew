@@ -44,8 +44,8 @@
             </section>
         </div>
         <section class="sm:rounded-b-lg shadow-xl">
-            <div class="py-12 round-b-lg bg-gray-800">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-4 bg-gray-800">
+            <div class="py-12 round-b-lg bg-white  dark:bg-gray-800">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-4 bg-white dark:bg-gray-800">
                     <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg p-4 px-2">
                         <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
                             Calendar
