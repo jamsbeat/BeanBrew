@@ -14,6 +14,7 @@
         <div class="flex justify-center w-full">
             {{ $bookings->links('pagination-brown') }}
         </div>
+
         @foreach($bookings as $booking)
             <div class="rounded-x-xl rounded-b-xl p-4 my-4 border-b-1 shadow-lg border-t border-gray-400">
                 <div class="">

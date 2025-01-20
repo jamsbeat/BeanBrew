@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
          User::factory(10)->create();
 
-         Booking::factory(40)->create();
+         Booking::factory(20)->create();
 
          User::factory()->create([
             'name' => 'Test User',
