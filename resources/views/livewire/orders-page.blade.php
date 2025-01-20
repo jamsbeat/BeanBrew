@@ -5,7 +5,6 @@
         </div>
     </div>
 
-
     <div class="bookings">
         <h3 class="py-1 text-xl font-bold text-dark-brown">Your Bookings</h3>
 
