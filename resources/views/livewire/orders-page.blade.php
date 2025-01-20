@@ -6,34 +6,6 @@
             </div>
         </div>
         <div>
-            <div class="text-lg font-semibold py-1 text-dark-brown">
-                Your Bookings
-            </div>
-            <div>
-                @foreach($bookings as $booking)
-                    <div>
-                        <div>
-                            <div>
-                                {{ $booking->user->name }}
-
-                                {{ $booking->location }}
-
-                                {{ $booking->created_at }}
-                            </div>
-                        </div>
-                        <button>
-                            <div class="text-red-600"
-                            wire:click="remove({{$booking->id}})">Remove</div>
-                        </button>
-                    </div>
-                @endforeach
-                <div class="pt-2">
-                    {{ $bookings->links('pagination-links') }}
-                </div>
-            </div>
->>>>>>> e48eb2f28b1241ccf311f67bf4e73a68aba46e77
-        </div>
-    </div>
 
     <div class="bookings">
         <h3><u>Your Bookings:</u></h3>
