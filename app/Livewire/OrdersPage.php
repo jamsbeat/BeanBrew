@@ -31,10 +31,4 @@ class OrdersPage extends Component
         Booking::find($id)->delete();
         $this->mount();
     }
-
-    public function remove($id)
-    {
-        Booking::find($id)->delete();
-        $this->mount();
-    }
 }

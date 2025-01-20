@@ -35,7 +35,9 @@
                             <div class="p-2 text-2xl dark:text-white font-bold font-poppins border-b-2 border-indigo-600">
                                 Bookings
                             </div>
-                            @livewire('bookings-list')
+                            <div class="">
+                                @livewire('bookings-list')
+                            </div>
                         </div>
                     </div>
                 </div>
