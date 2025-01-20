@@ -12,6 +12,11 @@ class BookingsList extends Component
 
     public $search = '';
 
+    public function mount()
+    {
+
+    }
+
     public function updatingSearch()
     {
         $this->resetPage();
@@ -19,11 +24,19 @@ class BookingsList extends Component
 
     public function render()
     {
-        $bookings = Booking::where('location', 'like', '%'.$this->search.'%')->paginate(5);
-
+        $bookings = Booking::where('location', 'like', '%'.$this->search.'%')
+            ->orWhere('id', 'like', '%'.$this->search.'%')
+            ->latest()
+            ->paginate(5);
 
         return view('livewire.bookings-list', [
             'bookings' => $bookings,
         ]);
+    }
+
+    public function remove($id)
+    {
+        Booking::find($id)->delete();
+        $this->mount();
     }
 }

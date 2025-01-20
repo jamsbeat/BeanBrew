@@ -42,4 +42,9 @@ class AdminController extends Controller
         $bookings = $this->booking->all();
         return view('admin.dashboard')->with('bookings', $bookings);
     }
+
+    public function editProducts()
+    {
+        return view('admin.edit-products');
+    }
 }
