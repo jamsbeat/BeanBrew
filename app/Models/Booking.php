@@ -14,6 +14,7 @@ class Booking extends Model
         'location' => 'array',
     ];
 
+
     public function user()
     {
         return $this->belongsTo(User::class);

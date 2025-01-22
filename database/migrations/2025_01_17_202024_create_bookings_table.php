@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('user_id');
             $table->string('location');
             $table->integer('people');
+            $table->text('message')->nullable();
             $table->date('date');
             $table->time('time');
             $table->timestamps();

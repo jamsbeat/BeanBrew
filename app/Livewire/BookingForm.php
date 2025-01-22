@@ -8,6 +8,7 @@ use App\Models\Booking;
 
 class BookingForm extends Component
 {
+    public $message = '';
     public $location = '';
     public $people = '';
     public $booking_date = '';
@@ -20,6 +21,7 @@ class BookingForm extends Component
             'user_id' => Auth::id(),
             'location' => $this->location,
             'people' => $this->people,
+            'message' => $this->message,
             'date' => $this->booking_date,
             'time' => $this->booking_time,
         ]);

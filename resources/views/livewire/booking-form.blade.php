@@ -24,6 +24,12 @@
             @error('location') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
+        <div>
+            <label for="message" class="block font-medium text-gray-700">Message</label>
+            <textarea id="message" wire:model="message" maxlength="200" placeholder="" class="mt-1 block w-full h-20 border-gray-300 rounded-md shadow-sm" required></textarea>
+            @error('message') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
         <!-- Date Picker -->
         <div>
             <label for="message" class="block font-medium text-gray-700">Message</label>
@@ -47,7 +53,7 @@
 
         <!-- Submit Button -->
         <div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            <button type="submit" class="bg-warm-brown text-white px-4 py-2 rounded hover:bg-warm-brown/40">
                 Submit Booking
             </button>
         </div>

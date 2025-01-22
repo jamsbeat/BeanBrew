@@ -1,17 +1,7 @@
 <div>
     @if (request()->is('/'))
             <div class="grid object-center overflow-hidden h-screen content-center bg-black items-center">
-                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto">
-                <style>
-            #bean-brew { position: absolute; blur: 1; transition: blur 1.5s ease; }
-            </style>
-            <script>
-                window.addEventListener('scroll', () => {
-                const el = document.getElementById('bean-brew');
-                const { top, bottom } = el.getBoundingClientRect();
-                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;
-                });
-            </script>
+                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto blur-sm">
                 <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[28px] font-poppins font-bold pl-12 border-white">
                     Bean <br> & <br> Brew
                 </h3>
@@ -21,12 +11,19 @@
         <style>
             #bean-brew { position: absolute; opacity: 1; transition: opacity 1.5s ease; }
         </style>
+{{--        <script>--}}
+{{--            window.addEventListener('scroll', () => {--}}
+{{--                const el = document.getElementById('bean-brew');--}}
+{{--                const { top, bottom } = el.getBoundingClientRect();--}}
+{{--                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;--}}
+{{--            });--}}
+{{--        </script>--}}
         <script>
-            window.addEventListener('scroll', () => {
-                const el = document.getElementById('bean-brew');
-                const { top, bottom } = el.getBoundingClientRect();
-                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;
-            });
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('title', () => ({
+                    show: false
+                }))
+            })
         </script>
         @endif
         <nav class="bg-dark-brown sticky top-0 z-40 shadow-md border-b-2 border-warm-brown">
