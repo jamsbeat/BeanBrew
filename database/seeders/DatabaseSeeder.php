@@ -7,6 +7,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Factories\BookingFactory;
 use Database\Factories\ProductFactory;
+use App\Models\ProductVariant;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
 
@@ -17,21 +18,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory(10)->create();
+        User::factory(10)->create();
 
-         Booking::factory(5)->create();
+        Booking::factory(5)->create();
 
-         User::factory()->create([
+        User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => bcrypt('password'),
-             'user_type' => 'admin',
+            'user_type' => 'admin',
         ]);
 
-
-        Product::factory(6)
-            ->hasVariants(3)
+        $products = Product::factory(6)
             ->hasImages(3)
             ->create();
+
+        foreach ($products as $product) {
+            $sizes = ['S', 'M', 'L'];
+
+            foreach ($sizes as $size) {
+                ProductVariant::create([
+                    'product_id' => $product->id, 
+                    'size' => $size,      
+                ]);
+            }
+        }
     }
 }
