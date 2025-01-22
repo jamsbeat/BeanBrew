@@ -26,6 +26,13 @@
 
         <!-- Date Picker -->
         <div>
+            <label for="message" class="block font-medium text-gray-700">Message</label>
+            <textarea id="message" wire:model="message" maxlength="200" placeholder="" class="mt-1 block w-full h-20 border-gray-300 rounded-md shadow-sm" required></textarea>
+            @error('message') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <!-- Date Picker -->
+        <div>
             <label for="booking_date" class="block font-medium text-gray-700">Date</label>
             <input type="date" id="booking_date" wire:model="booking_date" min="2024-24-02" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm "  required>
             @error('booking_date') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
