@@ -4,7 +4,10 @@
         <!-- Product info -->
         <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
             <div class="lg:col-span-2 lg:border-r lg:border-dark-brown lg:pr-8">
-                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ $this->product->name }}</h1>
+                <img src="https://placehold.co/600x400"
+                     alt=""
+                        class="rounded-lg bg-gray-100 border border-warm-brown w-full"
+                />
             </div>
 
             <!-- Options -->
@@ -22,7 +25,8 @@
                         </svg>
                     </button>
                     <p class="text-light-gray text-sm"
-                       x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne">{{ $this->product->description }}</p>
+                       x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne">{{ $this->product->description }}
+                    </p>
                 </div>
                 <form class="mt-10">
 
@@ -47,42 +51,10 @@
 
                     @csrf
                     <button wire:click.prevent="addToCart"
-                            class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-warm-brown px-8 py-3 text-base font-medium text-white hover:bg-warm-brown/30 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Add to cart
                     </button>
                 </form>
-            </div>
-
-            <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-                <!-- Description and details -->
-                <div>
-                    <h3 class="sr-only">Description</h3>
-
-                    <div class="space-y-6">
-                        <p class="text-base text-gray-900">{{ $this->product->description }}</p>
-                    </div>
-                </div>
-
-                <div class="mt-10">
-                    <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
-
-                    <div class="mt-4">
-                        <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                            <li class="text-gray-400"><span class="text-gray-600">"description here"</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">"description here"</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">"description here" &amp; "description here"</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">"description here"</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-10">
-                    <h2 class="text-sm font-medium text-gray-900">Details</h2>
-
-                    <div class="mt-4 space-y-6">
-                        <p class="text-sm text-gray-600">{{ $this->product->description }}</p>
-                    </div>
-                </div>
             </div>
             <script>
                 window.addEventListener('cartUpdated', event => {

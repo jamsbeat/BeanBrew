@@ -16,11 +16,7 @@
                         <!-- Arrow Button -->
                         <button
                             @click="showLogo = !showLogo"
-<<<<<<< HEAD
-                            class="flex items-center justify-center focus:outline-none pt-2 text-gray-800 dark:text-white">
-=======
                             class="flex items-center justify-center focus:outline-none pt-0.5 text-gray-800 dark:text-white">
->>>>>>> d6fdf2a (Fixed things)
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" :class="showLogo  ?  'rotate-90 '  :  ''">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                             </svg>
