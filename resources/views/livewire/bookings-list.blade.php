@@ -1,6 +1,6 @@
 <div class="p-6">
     <input type="text" wire:model.live="search" placeholder="Search bookings..."
-    class="my-4 rounded-lg h-10 border-2 border-indigo-800">
+    class="my-4 rounded-lg h-10 border-2 border-indigo-800 w-full">
 
     <div>
         <div>
@@ -11,10 +11,29 @@
                 @foreach($bookings as $booking)
                 <div class="rounded-xl p-4 my-4 border-b-1 shadow-xl">
                     <div class="">
-                        <div class="flex justify-between">
-                            <div class="text-indigo-700 text-lg font-bold">
+                        <div class="flex justify-between"
+                             x-data="{ open : false }"
+                             @mouseleave="open = false"
+                            >
+                            <div class="text-indigo-700 text-lg font-bold cursor-pointer"
+                                 @mouseover="open = true"
+                                 onclick="copyToClipboard('copy_{{ $booking->id }}')">
                                 {{$booking->id}} • {{ $booking->user->name }}
                             </div>
+                            <div x-show="open"
+                                 @mouseover="open = true"
+                                 class="p-2  absolute right-[680px] h-fit rounded-xl grid grid-cols-1 bg-indigo-700 text-white text-sm shdaow-xl">
+                                <div class="">{{$booking->user->name}}</div>
+                                <div> - </div>
+                                <div>Contact Details :</div>
+                                <div>{{ $booking->user->email }}</div>
+                            </div>
+                            <script>
+                                function copyToClipboard(id) {
+                                    document.getElementById(id).select();
+                                    document.execCommand('copy');
+                                }
+                            </script>
                             <div class="text-gray-400 font-thin text-xs">
                                 Created : {{ $booking->created_at }}
                             </div>

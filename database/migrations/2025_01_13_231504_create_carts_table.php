@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('user_id')->nullable();
             $table->string('session_id')->nullable();
-
             $table->timestamps();
         });
     }

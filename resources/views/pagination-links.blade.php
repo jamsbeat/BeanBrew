@@ -3,7 +3,7 @@
         <ul class="flex justify-between">
             <!-- prev -->
             @if ($paginator->onFirstPage())
-                <li class="w-16 px-2 py-1 text-center rounded-lg bg-indigo-800 text-gray-400">Prev</li>
+                <li class="w-16 px-2 py-1 text-center rounded-lg  border border-indigo-800 text-gray-400">Prev</li>
             @else
                 <li class="w-16 px-2 py-1 text-center rounded-lg bg-indigo-700 text-white cursor-pointer" wire:click="previousPage">Prev</li>
             @endif
@@ -30,7 +30,7 @@
             @if ($paginator->hasMorePages())
                 <li class="w-16 px-2 py-1 text-center rounded-lg bg-indigo-700 text-white cursor-pointer" wire:click="nextPage">Next</li>
             @else
-                <li class="w-16 px-2 py-1 text-center rounded-lg bg-indigo-800 text-gray-400">Next</li>
+                <li class="w-16 px-2 py-1 text-center rounded-lg border border-indigo-800 text-gray-400">Next</li>
             @endif
             <!-- next end -->
         </ul>

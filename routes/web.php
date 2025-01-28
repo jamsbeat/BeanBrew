@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\BookingForm;
 use App\Livewire\OrdersPage;
@@ -30,9 +31,8 @@ Route::middleware('guest')->group(function () {
 });
 
 //Admin
-Route::middleware(['auth'])->group(function () {
-    Route::controller(AdminController::class, 'index')->group(function () {
-        Route::get('/admin', 'dashboard')->name('dashboard');
-        Route::view('/admin/edit-products', 'admin.edit-products')->name('edit-products');
-    });
+// Admin
+Route::middleware(['auth',  AdminMiddleware::class])->group(function () {
+    Route::view('/admin', 'admin.dashboard')->name('dashboard');
+    Route::get('/admin/manage-products', \App\Livewire\ManageProducts::class)->name('edit-products');
 });
