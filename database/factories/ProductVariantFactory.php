@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductVariantFactory extends Factory
 {
+    private static $sizeIndex = 0;
+    private static $sizes = ['L', 'M', 'S'];
     /**
      * Define the model's default state.
      *
@@ -16,8 +18,11 @@ class ProductVariantFactory extends Factory
      */
     public function definition(): array
     {
+        $size = self::$sizes[self::$sizeIndex];
+        self::$sizeIndex = (self::$sizeIndex + 1) % count(self::$sizes);
+
         return [
-            'size' => $this->faker->unique(3)->randomElement(['S', 'M', 'L']),
+            'size' => $size,
         ];
     }
 }

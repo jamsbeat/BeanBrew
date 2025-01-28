@@ -52,23 +52,23 @@
                             </div>
                         </div>
                     @endforeach
-
-
                 </div>
             </div>
 
-            <div class="bg-gray-100 rounded-md p-4 md:sticky top-0">
+            <div class="bg-gray-100 rounded-md p-4 top-0">
                 @auth
-                    <div class="text-gray-800 mt-8 space-y-4">
-                        <div class="grid grid-cols-1">
-                            <div class="font-medium text-lg">Subtotal</div>
-                            <div class="font-medium">   {{$this->cart->total}}</div>
-                            <div></div>
+                    <div>
+                        <div class="text-gray-800 mt-[38px] space-y-4">
+                            <div class="grid grid-cols-1">
+                                <div class="font-medium text-lg">Subtotal</div>
+                                <div class="font-medium">{{$this->cart->total}}</div>
+                                <div></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mt-8 space-y-2">
-                        <button wire:click="checkout" type="button" class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-md">Checkout</button>
+                        <div class="mt-8 space-y-2">
+                            <button wire:click="checkout" type="button" class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-md">Checkout</button>
+                        </div>
                     </div>
                 @endauth
                 @guest

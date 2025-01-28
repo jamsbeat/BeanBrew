@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\On;
 use App\Models\Product;
+use Money\Money;
 
 class CreateProduct extends Component
 {
