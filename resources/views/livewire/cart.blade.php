@@ -55,19 +55,19 @@
                 </div>
             </div>
 
-            <div class="bg-gray-100 rounded-md p-4 top-0">
+            <div class="bg-gray-100 rounded-md p-4 top-0 h-fit mt-[68px]">
                 @auth
                     <div>
                         <div class="text-gray-800 mt-[38px] space-y-4">
-                            <div class="grid grid-cols-1">
+                            <div class="">
                                 <div class="font-medium text-lg">Subtotal</div>
                                 <div class="font-medium">{{$this->cart->total}}</div>
                                 <div></div>
                             </div>
                         </div>
 
-                        <div class="mt-8 space-y-2">
-                            <button wire:click="checkout" type="button" class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-md">Checkout</button>
+                        <div class="pt-8 space-y-2 mb-[38px]">
+                            <button wire:click="checkout" type="button" class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-warm-brown hover:bg-dark-brown text-white rounded-md">Checkout</button>
                         </div>
                     </div>
                 @endauth

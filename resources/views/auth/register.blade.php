@@ -1,4 +1,4 @@
-<x-guest-layout>
+    <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <img src="{{ asset('images/coffeelogo.png') }}" alt="Logo" class="w-24 h-24 p-2 bg-dark-brown sm:rounded-lg" />

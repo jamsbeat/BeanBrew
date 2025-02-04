@@ -29,9 +29,9 @@ class DatabaseSeeder extends Seeder
              'user_type' => 'admin',
         ]);
 
-// Create a product variant associated with the product
         Product::factory(6)
             ->hasVariants(3)
             ->create();
+
     }
 }
