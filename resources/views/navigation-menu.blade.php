@@ -1,10 +1,11 @@
 <div>
     @if (request()->is('/'))
             <div class="grid object-center overflow-hidden h-screen content-center bg-black items-center">
-                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto blur-sm">
-                <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[28px] font-poppins font-bold pl-12 border-white">
+                <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto">
+                <h3 id="bean-brew" class="pr-8 text-white text-8xl border-r-[28px] font-poppins font-extrabold pl-12 border-white">
                     Bean <br> & <br> Brew
                 </h3>
+                <div class="text-white absolute left-[50px] bottom-[200px] text-4xl font-bold hover:underline hover:cursor-pointer">Order Now! &#x2192;</div>
             </div>
             <div class="">
         </div>

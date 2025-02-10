@@ -232,76 +232,93 @@
                 <h2 class="text-4xl font-manrope font-bold text-dark-brown text-center">What our happy user says!</h2>
             </div>
 
-            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="relative mb-20">
-                            <!--Slider Wrapper-->
-                            <div class="max-w-max mx-auto lg:max-w-4xl">
-                                <p class="text-lg text-warm-brown leading-8 mb-8 text-center">
-                                    I have been using pagedone for several months now, and I must say that it has made my life a lot
-                                    easier. The
-                                    platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
-                                    and
-                                    make informed investment decisions. I particularly like the product's auto-tracking feature, which has
-                                    saved
-                                    me a lot of time and effort.
-                                </p>
+            <section class="h-full grid grid-cols-1 items-center justify-center pb-24">
+                <div
+                    x-data="{
+            currentIndex: 0,
+            scrollDelta: 0,
+            threshold: 100, // Set the scroll threshold to prevent sensitivity
+            content: [
+                {
+                title: 'Learn about <a href=&quot;/agents&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Agents</a> ',
+                paragraph:
+                    'Dive into detailed profiles of every Valorant agent. Learn about their unique abilities and how to use them effectively in battle. Master your favorite agent and dominate your matches!',
+                },
+                {
+                title: 'Learn about <a href=&quot;/maps&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Maps</a>',
+                paragraph:
+                    'Explore comprehensive guides to all the Valorant maps. From key chokepoints to strategic layouts, uncover the best ways to navigate and control the battlefield.',
+                },
+                {
+                title: 'Learn about <a href=&quot;/guns&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Guns</a>',
+                paragraph:
+                    '',
+                },
+            ],
+            handleScroll(event) {
+                this.scrollDelta += event.deltaY;
+                if (Math.abs(this.scrollDelta) >= this.threshold) {
+                this.currentIndex =
+                    (this.currentIndex + (this.scrollDelta > 0 ? 1 : -1) + this.content.length) %
+                    this.content.length;
+                this.scrollDelta = 0; // Reset scrollDelta after threshold is exceeded
+                }
+            },
+            }"
+                    class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8"
+                >
+                    <div class=" gap-4 md:grid-cols-2 md:items-center md:gap-8">
+                        <!-- Content -->
+                        <div class="flex gap-4 items-start">
+                            <div>
+
+                            </div>
+
+                            <!-- Scrollable Container for Title and Paragraph -->
+                            <div
+                                class="text-left"
+                                @wheel.prevent="handleScroll($event)"
+                            >
+                                <!-- Title -->
+                                <h2
+                                    class="text-3xl font-bold font-suse text-gray-900 sm:text-3xl"
+                                    x-html="content[currentIndex].title"
+                                ></h2>
+
+                                <!-- Paragraph -->
+                                <p
+                                    class="text-gray-700 max-w-lg mt-1 text-lg py-4"
+                                    x-html="content[currentIndex].paragraph"
+                                ></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="relative mb-20">
-                            <!--Slider Wrapper-->
-                            <div class="max-w-max mx-auto lg:max-w-4xl">
-                                <p class="text-lg text-warm-brown leading-8 mb-8 text-center">
-                                    I have been using pagedone for several months now, and I must say that it has made my life a lot
-                                    easier. The
-                                    platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
-                                    and
-                                    make informed investment decisions. I particularly like the product's auto-tracking feature, which has
-                                    saved
-                                    me a lot of time and effort.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="relative mb-20">
-                            <!--Slider Wrapper-->
-                            <div class="max-w-max mx-auto lg:max-w-4xl">
-                                <p class="text-lg text-warm-brown leading-8 mb-8 text-center">
-                                    I have been using pagedone for several months now, and I must say that it has made my life a lot
-                                    easier. The
-                                    platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
-                                    and
-                                    make informed investment decisions. I particularly like the product's auto-tracking feature, which has
-                                    saved
-                                    me a lot of time and effort.
-                                </p>
-                            </div>
+
+                        <div class="flex gap-2 pt-2 justify-center">
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 0 }"
+                                @click="currentIndex = 0"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 1 }"
+                                @click="currentIndex = 1"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 2 }"
+                                @click="currentIndex = 2"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div thumbsSlider="" class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="https://pagedone.io/asset/uploads/1704349534.png" alt="Emily image"
-                             class="mx-auto scale-90 transition-all duration-300 swiper-slide:w-16 border rounded-full swiper-slide:border-indigo-600 object-cover" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://pagedone.io/asset/uploads/1704349572.png" alt="Ethan image"
-                             class="mx-auto scale-90 transition-all duration-300 swiper-slide:w-16 border rounded-full swiper-slide:border-indigo-600 object-cover" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://pagedone.io/asset/uploads/1704349514.png" alt="Olivia image"
-                             class="mx-auto scale-90 transition-all duration-300 swiper-slide:w-16 border rounded-full swiper-slide:border-indigo-600 object-cover" />
-                    </div>
-
-                </div>
-
-            </div>
+            </section>
 
 
 

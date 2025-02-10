@@ -41,7 +41,7 @@ class CreateStripeCheckoutSession
                         'description' => $item->variant->size,
                         'metadata' => [
                             'product_id' => $item->product->id,
-                            'product_variant_id' => $item->variant->id,
+                            'product_variant_id' => $item->product_variant_id,
                         ],
                     ],
                 ],

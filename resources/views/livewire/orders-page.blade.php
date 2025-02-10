@@ -1,8 +1,14 @@
 <div>
-    <div>
+    <div class="mb-6">
         <div class="text-xl font-bold py-1 text-dark-brown">
             Your Orders
         </div>
+
+        @if($orders->isEmpty())
+            <div class="font-bold py-2">No orders yet. <a href="/order" class="font-extrabold hover:text-warm-brown">Click here to order.</a></div>
+        @else
+
+        @endif
     </div>
 
     <div class="bookings">
@@ -11,6 +17,9 @@
         <div class="flex justify-center w-full">
             {{ $bookings->links('pagination-brown') }}
         </div>
+        @if($bookings->isEmpty())
+            <div class="font-bold py-2">No bookings yet. <a href="/bookings" class="font-extrabold hover:text-warm-brown">Click here to book.</a></div>
+        @else
 
         @foreach($bookings as $booking)
             <div class="rounded-x-xl rounded-b-xl p-4 my-4 border-b-1 shadow-lg border-t border-gray-400">
@@ -56,5 +65,7 @@
                 </div>
             </div>
         @endforeach
+
+        @endif
     </div>
 </div>
