@@ -29,7 +29,7 @@
     <body class="font-sans antialiased bg-light-gray h-auto">
 
         <div class="min-h-screen bg-light-gray">
-            <div>
+            <div class="">
                 @livewire('navigation-menu')
             </div>
 
