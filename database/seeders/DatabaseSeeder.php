@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
              'user_type' => 'admin',
         ]);
 
-        Product::factory(6)
+        Product::factory(5)
             ->hasVariants(3)
             ->create();
 

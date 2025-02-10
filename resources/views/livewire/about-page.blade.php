@@ -232,7 +232,7 @@
                 <h2 class="text-4xl font-manrope font-bold text-dark-brown text-center">What our happy user says!</h2>
             </div>
 
-            <section class="h-full flex items-center justify-center pb-24">
+            <section class="h-full grid grid-cols-1 items-center justify-center pb-24">
                 <div
                     x-data="{
             currentIndex: 0,
@@ -267,26 +267,11 @@
             }"
                     class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8"
                 >
-                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+                    <div class=" gap-4 md:grid-cols-2 md:items-center md:gap-8">
                         <!-- Content -->
                         <div class="flex gap-4 items-start">
-                            <!-- Dots Navigation (Vertical Buttons) -->
-                            <div class="flex flex-col gap-2 pt-2">
-                                <button
-                                    class="w-2 h-2 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
-                                    :class="{ 'bg-valred border-valred': currentIndex === 0 }"
-                                    @click="currentIndex = 0"
-                                ></button>
-                                <button
-                                    class="w-2 h-2 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
-                                    :class="{ 'bg-valred border-valred': currentIndex === 1 }"
-                                    @click="currentIndex = 1"
-                                ></button>
-                                <button
-                                    class="w-2 h-2 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
-                                    :class="{ 'bg-valred border-valred': currentIndex === 2 }"
-                                    @click="currentIndex = 2"
-                                ></button>
+                            <div>
+
                             </div>
 
                             <!-- Scrollable Container for Title and Paragraph -->
@@ -302,19 +287,34 @@
 
                                 <!-- Paragraph -->
                                 <p
-                                    class="text-gray-700 max-w-lg mt-1 text-lg"
+                                    class="text-gray-700 max-w-lg mt-1 text-lg py-4"
                                     x-html="content[currentIndex].paragraph"
                                 ></p>
                             </div>
                         </div>
 
-                        <!-- Image -->
-                        <div>
-                            <img
-                                src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="rounded-2xl shadow-xl brightness-125 saturate-0"
-                                alt=""
-                            />
+                        <div class="flex gap-2 pt-2 justify-center">
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 0 }"
+                                @click="currentIndex = 0"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 1 }"
+                                @click="currentIndex = 1"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 hover:bg-valred"
+                                :class="{ 'bg-valred border-valred': currentIndex === 2 }"
+                                @click="currentIndex = 2"
+                            >
+                                <img src="https://placehold.co/400" class="rounded-full">
+                            </button>
                         </div>
                     </div>
                 </div>
