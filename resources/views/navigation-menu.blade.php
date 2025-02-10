@@ -12,13 +12,13 @@
         <style>
             #bean-brew { position: absolute; opacity: 1; transition: opacity 1.5s ease; }
         </style>
-{{--        <script>--}}
-{{--            window.addEventListener('scroll', () => {--}}
-{{--                const el = document.getElementById('bean-brew');--}}
-{{--                const { top, bottom } = el.getBoundingClientRect();--}}
-{{--                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;--}}
-{{--            });--}}
-{{--        </script>--}}
+        <script>
+            window.addEventListener('scroll', () => {
+                const el = document.getElementById('bean-brew');
+                const { top, bottom } = el.getBoundingClientRect();
+                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;
+            });
+        </script>
         <script>
             document.addEventListener('alpine:init', () => {
                 Alpine.data('title', () => ({
