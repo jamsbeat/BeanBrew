@@ -21,3 +21,13 @@ class ProductVariantFactory extends Factory
         ];
     }
 }
+
+
+/*foreach ($products as $product) {
+            $sizes = ['S', 'M', 'L'];
+
+            foreach ($sizes as $size) {
+                ProductVariant::create([
+                    'product_id' => $product->id, 
+                    'size' => $size,      
+                ]);

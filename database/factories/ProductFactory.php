@@ -17,9 +17,19 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['Latte', 'Cappuccino', 'Espresso', 'Americano', 'Mocha', 'Macchiato']),
+            'name' => $this->faker->unique()->randomElement(['Cappuccino', 'Espresso', 'Americano', 'Mocha', 'Macchiato']),
             'description' => $this->faker->paragraph(2),
             'price' => $this->faker->numberBetween(5_00, 15_00),
         ];
+    }
+
+    public function Latte(): Factory
+    {
+        return [
+            'name' => 'Latte',                  // Corrected assignment
+            'description' => 'Very nice drink', // Corrected assignment
+            'price' => 6_99,                    // Corrected assignment
+        ];
+
     }
 }

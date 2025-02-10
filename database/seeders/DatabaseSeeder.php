@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'user_type' => 'admin',
         ]);
 
-        $products = Product::factory(6)
+        $products = Product::factory(5)
             ->hasImages(3)
             ->create();
 
