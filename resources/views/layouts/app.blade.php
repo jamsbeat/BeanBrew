@@ -53,7 +53,7 @@
 
 
         </div>
-        <div>
+        <div class="mx-auto py-64 max-h-10" >
             @livewire('footer-menu')
         </div>
 

@@ -1,4 +1,4 @@
-<footer class="mt-12">
+<footer class="mt-12 pt-12">
     <div class="border-t-2 border-gray-400/60 shadow-xs bg-light-gray text-center">
         <div class="mt-6 pb-4">
             <a href="/about" class="text-valblack/80 font-semibold hover:text-valred hover:cursor-pointer hover:underline">About</a>

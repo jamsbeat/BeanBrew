@@ -12,8 +12,8 @@
                wire:key="{{ $product->id }}"
                class="">
                 <div class="p-4">
-                    <img src="https://placehold.co/600x400"
-                         class=""/>
+                    <img src="{{ $product->image }}"
+                         class="rounded-t-lg" />
                     <div class="bg-warm-brown
                     border-t-[3px]  border-t-dark-brown rounded-b-lg">
                         <div class="flex items-center justify-between

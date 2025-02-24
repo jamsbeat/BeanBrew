@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class ProductVariantFactory extends Factory
 {
     private static $sizeIndex = 0;
-    private static $sizes = ['L', 'M', 'S'];
+    private static $sizes = ['S', 'M', 'L'];
     /**
      * Define the model's default state.
      *

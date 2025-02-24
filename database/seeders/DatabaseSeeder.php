@@ -5,9 +5,11 @@ namespace Database\Seeders;
 use App\Models\Booking;
 use App\Models\ProductVariant;
 use App\Models\User;
+use App\Models\Image;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Factories\BookingFactory;
 use Database\Factories\ProductFactory;
+use Database\Factories\ImageFactory;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
 
@@ -29,9 +31,12 @@ class DatabaseSeeder extends Seeder
              'user_type' => 'admin',
         ]);
 
-        Product::factory(5)
+        Product::factory(6)
             ->hasVariants(3)
             ->create();
+
+        Image::factory(1)
+        ->create();
 
     }
 }
