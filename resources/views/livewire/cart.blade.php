@@ -10,7 +10,7 @@
                         <div class="grid grid-cols-3 items-center bg-warm-brown p-4 rounded-lg">
                             <div class="col-span-2 flex items-center gap-4">
                                 <div class="w-28 h-28 shrink-0 divide-light-gray p-2 rounded-md">
-                                    <img src='https://readymadeui.com/images/product14.webp' class="w-full h-full p-2 bg-light-gray rounded-md object-contain" />
+                                    <img src='{{ $item->product->image }}' class="w-full h-full p-2 bg-light-gray rounded-md object-contain" />
                                 </div>
 
                                 <div class="">

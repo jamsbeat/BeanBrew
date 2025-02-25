@@ -2,14 +2,34 @@
     @if (request()->is('/'))
         <div class="grid object-center overflow-hidden h-screen content-center bg-black items-center">
             <img src="https://wallpapers.com/images/hd/coffee-beans-with-leaves-xjack9rx9v60yf8l.jpg" class="w-fit h-auto">
-            <h3 id="bean-brew" class="pr-8 absolute bottom-[450px] text-white text-8xl border-r-[28px] font-poppins font-extrabold pl-12 border-white">
+            <h3 id="bean-brew" class="pr-8 absolute left-[50px] bottom-[375px] text-white text-[10rem] border-r-[28px] font-poppins font-extrabold pl-12 border-white leading-[10rem]">
                 Bean <br> & <br> Brew
             </h3>
-            <div class="text-white absolute left-[50px] bottom-[200px] text-4xl font-bold hover:underline hover:cursor-pointer">Order Now! &#x2192;</div>
+            <div id="order-menu" class="text-white absolute left-[50px] bottom-[200px] text-4xl font-bold hover:underline hover:cursor-pointer">Order Now! &#x2192;</div>
         </div>
+        <style>
+            #bean-brew { position: absolute; opacity: 1; transition: opacity 1.5s ease; }
+        </style>
         <script>
             window.addEventListener('scroll', () => {
                 const el = document.getElementById('bean-brew');
+                const { top, bottom } = el.getBoundingClientRect();
+                el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;
+            });
+        </script>
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('title', () => ({
+                    show: false
+                }))
+            })
+        </script>
+        <style>
+            #order-menu { position: absolute; opacity: 1; transition: opacity 1.5s ease; }
+        </style>
+        <script>
+            window.addEventListener('scroll', () => {
+                const el = document.getElementById('order-menu');
                 const { top, bottom } = el.getBoundingClientRect();
                 el.style.opacity = (top < 0 || bottom > window.innerHeight) ? 0 : 1;
             });

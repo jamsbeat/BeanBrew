@@ -1,4 +1,4 @@
-<div class="bg-white">
+<div class="bg-white rounded-xl">
     <div class="pt-6">
 
         <!-- Product info -->
